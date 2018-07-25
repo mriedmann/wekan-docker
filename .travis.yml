@@ -1,0 +1,15 @@
+sudo: required
+
+language: node_js
+
+services:
+  - docker
+
+before_install:
+  - docker-compose build
+  - docker-compose up -d
+  - sleep 60
+  - docker ps -a
+
+script:
+  - curl http://localhost/ -L --fail -s | grep '<link rel="manifest" href="/wekan-manifest.json">' -q

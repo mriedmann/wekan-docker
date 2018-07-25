@@ -1,0 +1,43 @@
+version: '2'
+
+services:
+
+  wekandb:
+    image: mongo:3.2.20
+    container_name: wekan-db
+    restart: always
+    command: mongod --smallfiles --oplogSize 128
+    networks:
+      - wekan-tier
+    expose:
+      - 27017
+    volumes:
+      - wekan-db:/data/db
+      - wekan-db-dump:/dump
+
+  wekan:
+    image: mriedmann/wekan
+    container_name: wekan-app
+    restart: always
+    networks:
+      - wekan-tier
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 80:8080
+    environment:
+      - MONGO_URL=mongodb://wekandb:27017/wekan
+      - ROOT_URL=http://localhost
+    depends_on:
+      - wekandb
+
+volumes:
+  wekan-db:
+    driver: local
+  wekan-db-dump:
+    driver: local
+
+networks:
+  wekan-tier:
+    driver: bridge
