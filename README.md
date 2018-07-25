@@ -1,4 +1,4 @@
-# Ubunut-based Wekan Docker Image
+# Ubuntu-based Wekan Docker Image
 
 [Wekan](https://github.com/wekan/wekan) is an completely Open Source and Free software collaborative kanban board application with MIT license.
 
