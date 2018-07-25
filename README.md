@@ -6,6 +6,6 @@ Whether you’re maintaining a personal todo list, planning your holidays with s
 
 ## Why another container?
 
-I totally love Wekan, but I'm really sorry to admid that the default docker-file simply sucks!
+I totally love Wekan, but I'm really sorry to admit that the default docker-file simply sucks!
 
-This Dockerfile is based on the original one, but does not cramp all commands into a single RUN statement. Forthermore it switches to a low-priv user at the end so node does not run as root (like in the original image). 
+This Dockerfile is based on the original one, but does not cram all commands into a single RUN statement. Furthermore, it switches to a low-priv user at the end so node does not run as root (like in the original image).
