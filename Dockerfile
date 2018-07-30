@@ -1,7 +1,7 @@
 FROM ubuntu:bionic
 MAINTAINER michael_riedmann@live.com
 
-ENV WEKAN_VERSION=0.94
+ENV WEKAN_VERSION=1.21
 ENV BUILD_DEPS="bsdtar wget curl bzip2 build-essential python git ca-certificates gcc-7"
 ENV NODE_VERSION=v8.11.3
 ENV NODE_VERSION_CHECKSUM="40e7990489c13a1ed1173d8fe03af258c6ed964b92a4bd59a0927ac5931054aa"
